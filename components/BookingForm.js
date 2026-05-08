@@ -49,7 +49,7 @@ export default function BookingForm({ car, userId, selectedDriver }) {
         let driverCost = 0;
         if (selectedDriver) {
           const { amount, paymentFrequency } = selectedDriver.salary;
-          
+
           if (paymentFrequency === 'daily') {
             driverCost = amount * days;
           } else if (paymentFrequency === 'weekly') {
@@ -134,7 +134,7 @@ export default function BookingForm({ car, userId, selectedDriver }) {
         key: orderData.razorpayKeyId,
         amount: orderData.amount,
         currency: 'INR',
-        name: 'Wheelify - Car Rental',
+        name: 'DriveNest - Premium Car Rental',
         description: `Booking for ${car.name}${selectedDriver ? ` with driver ${selectedDriver.name}` : ''}`,
         order_id: orderData.orderId,
         handler: async function (response) {

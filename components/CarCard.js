@@ -1,63 +1,54 @@
 import Link from 'next/link';
+import { Users } from 'lucide-react';
 
 export default function CarCard({ car }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-      <div className="relative h-48">
+    <div className="bg-space-gray rounded-cards overflow-hidden transition-all duration-300 hover:bg-storm-gray border border-deep-graphite group">
+      <div className="relative h-48 overflow-hidden bg-pitch-black">
         <img
-          src={car.images[0] || '/placeholder-car.jpg'}
+          src={car.images?.[0] || '/placeholder-car.jpg'}
           alt={car.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105"
         />
         {!car.available && (
-          <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">
+          <div className="absolute top-4 right-4 bg-red-500/90 backdrop-blur-md text-white px-3 py-1 rounded-buttons text-sm font-semibold tracking-wide">
             Unavailable
           </div>
         )}
       </div>
 
-      <div className="p-4">
-        <h3 className="text-xl font-bold text-gray-800 mb-2">{car.name}</h3>
-        <p className="text-gray-600 mb-3">
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-[20px] font-semibold text-cloud-white leading-tight">{car.name}</h3>
+        </div>
+        <p className="text-cool-gray text-[14px] mb-4">
           {car.brand} • {car.year}
         </p>
 
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center space-x-4 text-sm text-gray-600">
-            <span className="flex items-center">
-              <svg
-                className="w-4 h-4 mr-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              {car.seats} Seats
-            </span>
-            <span className="capitalize">{car.transmission}</span>
-          </div>
+        <div className="flex items-center space-x-4 mb-6">
+          <span className="flex items-center text-[14px] text-ghost-white/80">
+            <Users className="w-4 h-4 mr-1.5 text-highlight-blue" />
+            {car.seats} Seats
+          </span>
+          <span className="text-[14px] text-ghost-white/80 capitalize bg-pitch-black px-2 py-0.5 rounded-standard">
+            {car.transmission}
+          </span>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <div>
-            <span className="text-2xl font-bold text-blue-600">
+            <span className="text-[24px] font-semibold text-cloud-white">
               ₹{car.pricePerDay}
             </span>
-            <span className="text-gray-600 text-sm">/day</span>
+            <span className="text-cool-gray text-[14px]">/day</span>
           </div>
 
           <Link
             href={`/cars/${car._id}`}
-            className={`px-6 py-2 rounded-lg transition ${
+            className={`px-5 py-2 rounded-buttons text-[14px] font-semibold transition ${
               car.available
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                ? 'bg-interactive-blue text-cloud-white hover:bg-vivid-blue'
+                : 'bg-storm-gray text-cool-gray cursor-not-allowed'
             }`}
           >
             {car.available ? 'View Details' : 'Unavailable'}

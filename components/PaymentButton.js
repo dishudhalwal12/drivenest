@@ -56,7 +56,7 @@ export default function PaymentButton({ booking }) {
         amount: orderData.amount,
         currency: orderData.currency,
         order_id: orderData.orderId,
-        name: 'Wheelify Car Rentals',
+        name: 'DriveNest',
         description: `Booking for ${booking.car.name}`,
         image: '/logo.png', // Add your logo
         prefill: {

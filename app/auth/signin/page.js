@@ -79,13 +79,13 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-2xl shadow-2xl">
+    <div className="min-h-screen bg-pitch-black flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-[30px] shadow-xl border border-deep-graphite">
         <div>
-          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="text-center text-[32px] font-bold text-cloud-white tracking-tight">
             {isLogin ? 'Sign in to your account' : 'Create new account'}
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-[14px] text-ghost-white">
             {isLogin ? "Don't have an account? " : 'Already have an account? '}
             <button
               onClick={() => {
@@ -93,7 +93,7 @@ export default function SignInPage() {
                 setError('');
                 setFormData({ name: '', email: '', password: '' });
               }}
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-bold text-interactive-blue hover:text-vivid-blue transition"
             >
               {isLogin ? 'Sign up' : 'Sign in'}
             </button>
@@ -110,7 +110,7 @@ export default function SignInPage() {
           <div className="space-y-4">
             {!isLogin && (
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="name" className="block text-[12px] font-bold text-ghost-white mb-1 uppercase tracking-wider">
                   Full Name
                 </label>
                 <input
@@ -120,14 +120,14 @@ export default function SignInPage() {
                   required={!isLogin}
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="w-full px-4 py-3 bg-storm-gray text-cloud-white border border-deep-graphite rounded-inputs focus:border-interactive-blue outline-none transition placeholder:font-normal"
                   placeholder="John Doe"
                 />
               </div>
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-[12px] font-bold text-ghost-white mb-1 uppercase tracking-wider">
                 Email address
               </label>
               <input
@@ -137,13 +137,13 @@ export default function SignInPage() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="w-full px-4 py-3 bg-storm-gray text-cloud-white border border-deep-graphite rounded-inputs focus:border-interactive-blue outline-none transition placeholder:font-normal"
                 placeholder="you@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-[12px] font-bold text-ghost-white mb-1 uppercase tracking-wider">
                 Password
               </label>
               <input
@@ -153,7 +153,7 @@ export default function SignInPage() {
                 required
                 value={formData.password}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="w-full px-4 py-3 bg-storm-gray text-cloud-white border border-deep-graphite rounded-inputs focus:border-interactive-blue outline-none transition placeholder:font-normal"
                 placeholder={isLogin ? 'Enter your password' : 'Min 6 characters'}
                 minLength={6}
               />
@@ -164,7 +164,7 @@ export default function SignInPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-[16px] font-bold rounded-buttons text-white bg-interactive-blue hover:bg-vivid-blue transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Please wait...' : isLogin ? 'Sign in' : 'Sign up'}
             </button>
@@ -172,10 +172,10 @@ export default function SignInPage() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300" />
+              <div className="w-full border-t border-deep-graphite" />
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Or continue with</span>
+            <div className="relative flex justify-center text-[14px]">
+              <span className="px-4 bg-white text-cool-gray">Or continue with</span>
             </div>
           </div>
 
@@ -183,7 +183,7 @@ export default function SignInPage() {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-3 px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-deep-graphite rounded-buttons shadow-sm bg-white text-[14px] font-bold text-cloud-white hover:bg-storm-gray transition transition-all duration-300"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path

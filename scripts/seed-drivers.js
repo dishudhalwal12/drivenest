@@ -45,7 +45,7 @@ const Driver = mongoose.models.Driver || mongoose.model('Driver', driverSchema);
 const sampleDrivers = [
   {
     name: 'Rajesh Kumar',
-    email: 'rajesh.kumar@wheelify.com',
+    email: 'rajesh.kumar@drivenest.com',
     contactNumber: '9876543210',
     address: {
       street: '123 MG Road',
@@ -69,7 +69,7 @@ const sampleDrivers = [
   },
   {
     name: 'Amit Sharma',
-    email: 'amit.sharma@wheelify.com',
+    email: 'amit.sharma@drivenest.com',
     contactNumber: '9876543211',
     address: {
       street: '456 Nehru Place',
@@ -93,7 +93,7 @@ const sampleDrivers = [
   },
   {
     name: 'Suresh Patel',
-    email: 'suresh.patel@wheelify.com',
+    email: 'suresh.patel@drivenest.com',
     contactNumber: '9876543212',
     address: {
       street: '789 SG Highway',

@@ -3,12 +3,13 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Providers from '@/components/Providers';
+import Chatbot from '@/components/Chatbot';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Wheelify - Car Rental Platform',
-  description: 'Rent your perfect car for any journey',
+  title: 'DriveNest - Premium Car Rental Platform',
+  description: 'DriveNest: Rent your perfect car for any journey',
 };
 
 export default function RootLayout({ children }) {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main className="flex-grow">{children}</main>
             <Footer />
+            <Chatbot />
           </div>
         </Providers>
       </body>

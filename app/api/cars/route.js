@@ -7,7 +7,6 @@ import { auth } from '@/auth';
 export async function GET(request) {
   try {
     await connectDB();
-
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
     const transmission = searchParams.get('transmission');
